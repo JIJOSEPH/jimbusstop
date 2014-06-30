@@ -33,7 +33,7 @@
 				}
 			});
 			$("#addphoto").bind("tap", function(){
-				var options = {sourceType:Camera.PictureSourceType.CAMERA, destinationType: Camera.DestinationType.FILE_URI};
+			var options = {sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType: Camera.DestinationType.FILE_URI};
 				navigator.camera.getPicture(onCameraSuccess, onError, options);
 			});
 			$("#savenote").bind("tap", function(){
