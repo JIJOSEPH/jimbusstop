@@ -27,7 +27,7 @@
 			$("#notedetailcontent").html(html);
 			}); 
 			$("#newnote").live("pageshow", function(){
-				navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true});
+				navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 3000, enableHighAccuracy: true});
 				if(itemindex >= 0) {
 					$("#noteimage").css("display","block");
 				}
