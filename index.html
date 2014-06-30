@@ -33,7 +33,7 @@
 				}
 			});
 			$("#addphoto").bind("tap", function(){
-				var options = {sourceType:Camera.PictureSourceType.PHOTOLIBRARY, destinationType: Camera.DestinationType.FILE_URI};
+				var options = {sourceType:Camera.PictureSourceType.CAMERA, destinationType: Camera.DestinationType.FILE_URI};
 				navigator.camera.getPicture(onCameraSuccess, onError, options);
 			});
 			$("#savenote").bind("tap", function(){
@@ -76,6 +76,7 @@
 
 		function saveNote(tx) {
 			tx.executeSql("INSERT INTO NOTES (notetitle, notedetail, imagesource, notelat, notelon) VALUES (?, ?, ?, ?, ?)",[notedata.notetitle, notedata.notedetail, notedata.imagesource, notedata.notelat, notedata.notelon]);
+		    alert("Busstop Data Saved");
 		}
 
 		function onGeoSuccess(position) {
