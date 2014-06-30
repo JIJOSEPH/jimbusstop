@@ -77,6 +77,7 @@
 		function saveNote(tx) {
 			tx.executeSql("INSERT INTO NOTES (notetitle, notedetail, imagesource, notelat, notelon) VALUES (?, ?, ?, ?, ?)",[notedata.notetitle, notedata.notedetail, notedata.imagesource, notedata.notelat, notedata.notelon]);
 		    alert("Busstop Data Saved");
+			$("#main").live("pageshow");
 		}
 
 		function onGeoSuccess(position) {
