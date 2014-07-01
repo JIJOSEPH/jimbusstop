@@ -11,6 +11,7 @@
 	<script src="js/jquery.mobile-1.2.0.js"></script>
 	<script src="cordova.js"></script>
 	<script src="js/mustache.js"></script>
+	<script src="geo.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 	<script>
@@ -27,7 +28,7 @@
 			$("#notedetailcontent").html(html);
 			}); 
 			$("#newnote").live("pageshow", function(){
-				navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 3000, enableHighAccuracy: true});
+				navigator.geolocation.getAccurateCurrentPosition(onGeoSuccess, onGeoError, {desiredAccuracy:20, maxWait:15000});
 				if(itemindex >= 0) {
 					$("#noteimage").css("display","block");
 				}
